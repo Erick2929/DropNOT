@@ -1,20 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+import MenuContainer from './src/navigation/MenuContainer';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>ESTA APP SERA LA GANADORA</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <MenuContainer></MenuContainer>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
