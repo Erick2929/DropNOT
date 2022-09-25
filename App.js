@@ -6,7 +6,7 @@ import MenuContainer from './src/navigation/MenuContainer';
 export default function App() {
   return (
     <NavigationContainer>
-      <MenuContainer></MenuContainer>
+      <MenuContainer />
     </NavigationContainer>
   );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import { Color } from '../styles/Styles';
 import HomeScreen from '../screens/HomeScreen';
 import UsageScreen from '../screens/UsageScreen';
 import NutsScreen from '../screens/NutsScreen';
@@ -13,37 +14,24 @@ const MenuContainer = () => {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarIcon: (focused, color, size) => {
-                    let iconHome = '../../assets/favicon.png';
-                    let icon = '../../assets/favicon.png';
+                    let iconInicio = '../../assets/placeholder-home.png';
+                    let iconNuts = '../../assets/placeholder-logo.png';
+                    let iconUso = '../../assets/placeholder-usage.png';
+                    let iconDefault = '../../assets/favicon.png';
 
-                    if (route.name === "Inicio") {
-                        return (
-                            <Image 
-                                style={{
-                                    resizeMode: 'contain', 
-                                    height:"60%"
-                                }} 
-                                source={require(iconHome)}
-                            >
-                            </Image>
-                        );
-                    }
-                    else {
-                        return (
-                            <Image 
-                                style={{
-                                    resizeMode: 'contain', 
-                                    height:"60%"
-                                }} 
-                                source={require(icon)}
-                            >
-                            </Image>
-                        );
-                    }
+                    console.log(focused)
+                    if (route.name === "Inicio") 
+                        return <Image style={[style.icon]} source={require(iconInicio)}></Image>
+                    else if (route.name === "Uso")
+                        return <Image style={style.icon} source={require(iconUso)}></Image>
+                    else if (route.name === "Nuts")
+                        return <Image style={style.icon} source={require(iconNuts)}></Image>
+                    else
+                        return <Image style={style.icon} source={require(iconDefault)}></Image>
 
                 },
-                tabBarActiveTintColor: 'blue',
-                tabBarInactiveTintColor: 'grey'
+                tabBarActiveTintColor: Color.Primary,
+                tabBarInactiveTintColor: 'grey',
             })}
         >
             <Tab.Screen name="Inicio" component={HomeScreen} />
@@ -52,5 +40,15 @@ const MenuContainer = () => {
         </Tab.Navigator>
     );
 };
+
+const style = StyleSheet.create({
+    icon: {
+        resizeMode: 'contain', 
+        height:"60%"
+    },
+    iconHighlighted: {
+        tintColor: Color.Primary
+    }
+});
 
 export default MenuContainer;

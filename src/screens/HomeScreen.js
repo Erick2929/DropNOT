@@ -1,63 +1,64 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, View, Text, Image } from 'react-native';
 
+import Styles from '../styles/Styles';
+
 const HomeScreen = () => {
     return (
         <SafeAreaView>
             <ScrollView>
-                <View style={[style.textCenter, {paddingTop: 10}]}>
-                    <Text style={style.title}>Consumo de Hoy</Text>
-                    <Image style={style.img} source={require('../../assets/placeholder-water.png')}></Image>
+                <View style={[Styles.main, Styles.textCenter, {paddingTop: 10}]}>
+                    <Text style={Styles.title}>Consumo de Hoy</Text>
+                    {/* Widget BEGIN */}
+                    <Image 
+                        source={require('../../assets/placeholder-water.png')}
+                        style={style.tempImg}
+                    ></Image>
+                    {/* Widget END */}
                     {/* Alerta BEGIN */}
-                    <View style={style.alert}>
-                        <View style={style.row}>
-                            <View style={style.col2}>
+                    <View style={Styles.alert}>
+                        <View style={Styles.row}>
+                            <View style={Styles.col2}>
                                 <Image 
                                     source={require('../../assets/placeholder-warning.png')}
-                                    style={{
-                                        resizeMode: 'contain',
-                                        width: '50%',
-
-                                        alignSelf: 'flex-end',
-                                        marginHorizontal: 10,
-                                    }}
+                                    style={style.iconWarning}
                                 ></Image>
                             </View>
-                            <View style={style.col9}>
+                            <View style={Styles.col9}>
                                 <Text>
                                     Alerta: Se ha detectado que el nut 
-                                    <Text style={style.highlighted}> Lavabo Cocina </Text> 
+                                    <Text style={Styles.highlighted}> Lavabo Cocina </Text> 
                                     ha permanecido abierto por un periodo prolongado.
                                 </Text>
                             </View>
                         </View>
                     </View>
                     {/* Alerta END */}
-                    <Text style={style.title}>Consumo General</Text>
+                    <Text style={Styles.title}>Consumo General</Text>
                     {/* Consumo BEGIN */}
-                    <View style={style.card}>
-                        <Text style={style.subtitle}>Su consumo bajó <Text style={style.highlighted}>14.56%</Text></Text>
-                        <Text>¡Usaste <Text style={style.highlighted}>159.04 litros</Text> menos que la semana pasada!</Text>
+                    <View style={Styles.card}>
+                        <Text style={Styles.subtitle}>Su consumo bajó <Text style={Styles.highlighted}>14.56%</Text></Text>
+                        <Text>¡Usaste <Text style={Styles.highlighted}>159.04 litros</Text> menos que la semana pasada!</Text>
                     </View>
                     {/* Consumo END */}
                     {/* Semanal BEGIN */}
-                    <View style={style.card}>
-                        <View style={style.row}>
-                            <View style={[style.col6, style.textCenter]}>
-                                <Text style={style.subtitle}>Semana Pasada</Text>
-                                <Text style={style.title}>1092 L</Text>
+                    <View style={Styles.card}>
+                        <View style={Styles.row}>
+                            <View style={[Styles.col6, Styles.textCenter]}>
+                                <Text style={Styles.subtitle}>Semana Pasada</Text>
+                                <Text style={Styles.title}>1092 L</Text>
                             </View>
-                            <View style={[style.col6, style.textCenter]}>
-                                <Text style={[style.subtitle, style.correct]}>Semana Actual</Text>
-                                <Text style={style.title}>932.96 L</Text>
+                            <View style={[Styles.col6, Styles.textCenter]}>
+                                <Text style={[Styles.subtitle, Styles.correct]}>Semana Actual</Text>
+                                <Text style={Styles.title}>932.96 L</Text>
                             </View>
                         </View>
                     </View>
                     {/* Semanal END */}
                     {/* Información Relevante BEGIN */}
-                    <Text style={style.title}>Información Relevante</Text>
-                    <View style={style.card}>
-                        <Text style={style.title}>136 Litros</Text>
+                    <Text style={Styles.title}>Información Relevante</Text>
+                    <View style={Styles.card}>
+                        <Text style={Styles.title}>136 Litros</Text>
                         <Text>
                             El consumo de agua en los hogares varía enormemente 
                             según el número de personas que hayan en casa, y sus 
@@ -74,62 +75,14 @@ const HomeScreen = () => {
 };
 
 const style = StyleSheet.create({
-    title: {
-        marginTop: 10,
-        marginBottom: 20,
-        fontSize: 20,
-        fontWeight: 'bold'
+    iconWarning: {
+        width: '50%',
+        marginHorizontal: 10,
+        alignSelf: 'flex-end',
+        resizeMode: 'contain',
     },
-    subtitle: {
-        marginTop: 5,
-        marginBottom: 10,
-        fontSize: 16,
-        fontWeight: 'bold'
-    },
-    highlighted: {
-        color: 'steelblue',
-        fontWeight: 'bold'
-    },
-    correct: {
-        color: 'green'
-    },
-    incorrect: {
-        color: 'red'
-    },
-    textCenter: {
-        alignItems: 'center'
-    },
-    img: {
+    tempImg: {
         borderRadius: 50,
-    },
-    alert: {
-        width: '90%',
-        padding: 20,
-    },
-    card: {
-        backgroundColor: 'white',
-        borderRadius: 10,
-        width: '90%',
-        padding: 20,
-        marginBottom: 20
-    },
-    row: {
-        flexDirection: 'row'
-    },
-    col10: {
-        flex: 0.835
-    },
-    col9: {
-        flex: 0.75
-    },
-    col6: {
-        flex: 0.5
-    },
-    col3: {
-        flex: 0.25
-    },
-    col2: {
-        flex: 0.165
     }
 });
 
