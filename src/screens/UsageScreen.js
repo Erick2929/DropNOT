@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, View, Text, Image, Button } from 'react-native';
 
-import Styles, { Color } from '../styles/Styles';
+import Styles from '../styles/Styles';
 
 const UsageScreen = () => {
     return (

@@ -3,7 +3,6 @@ import { StyleSheet, SafeAreaView, ScrollView, View, Text, Image } from 'react-n
 import MaskedView from '@react-native-masked-view/masked-view';
 
 import Styles from '../styles/Styles';
-import { Color } from '../styles/Styles';
 
 const MAX_WATER = 100;
 const WEEK_USAGE = 800.96;
