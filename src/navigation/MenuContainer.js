@@ -19,7 +19,6 @@ const MenuContainer = () => {
                     let iconUso = '../../assets/placeholder-usage.png';
                     let iconDefault = '../../assets/favicon.png';
 
-                    console.log(focused)
                     if (route.name === "Inicio") 
                         return <Image style={[style.icon]} source={require(iconInicio)}></Image>
                     else if (route.name === "Uso")

@@ -40,6 +40,9 @@ const Styles = StyleSheet.create({
     textCenter: {
         alignItems: 'center'
     },
+    cPrimary: {
+        color: Color.Primary
+    },
     cBlack: {
         color: 'black'
     },
@@ -55,6 +58,9 @@ const Styles = StyleSheet.create({
     },
     bgLightgrey: {
         backgroundColor: 'lightgrey'
+    },
+    bgTransparent: {
+        backgroundColor: 'transparent'
     },
     /* Pseudo Bootstrap */
     card: {

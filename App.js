@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import useColorScheme from 'react-native/Libraries/Utilities/useColorScheme';
+import { DefaultTheme, DarkTheme, NavigationContainer } from '@react-navigation/native';
 
 import MenuContainer from './src/navigation/MenuContainer';
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={DefaultTheme}>
       <MenuContainer />
     </NavigationContainer>
   );
