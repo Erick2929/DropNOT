@@ -83,7 +83,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Jorge Becerril - jorgebecerrilgm@gmail.com - [@jorgebecerriltw](https://twitter.com/jorgebecerriltw)
 <br>Erick Siller - 
-<br>Ramiro Garza - 
+<br>Ramiro Garza - garza.ramirov@gmail.com 
 <br>Victor Ramirez - 
 
 Project Link: [https://github.com/Erick2929/DropNOT](https://github.com/Erick2929/DropNOT)
